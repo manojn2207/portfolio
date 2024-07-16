@@ -26,12 +26,7 @@ export const AboutMe = ()=>{
         </div>
         <div className="">
           I'm Manoj Nandakumar, an MS CS graduate from SUNY at Stony Brook with
-          a year of software engineering experience. Passionate about creating
-          seamless user experiences, I've worked on projects involving Flutter
-          apps, SaaS products, and responsive web design. I enjoy solving
-          complex problems and continuously learning new technologies.
-          Currently, I'm focused on refining my skills in front-end development
-          and technical support.
+          a year of software engineering experience. 
         </div>
     </div>
 }

@@ -6,8 +6,8 @@ import '../styles/globals.css';
 export default function Navbar() {
   const pathname = usePathname();
   return (
-    <nav className="bg-primary-dark text-white w-28 px-1">
-      <div className="h-full flex flex-col">
+    <nav className="bg-primary-mid pt-2 text-white w-28 px-1">
+      <div className="flex flex-col">
        
         <div className="flex flex-col space-y-5 mx-1">
           {routes.map((route) => (
@@ -16,7 +16,7 @@ export default function Navbar() {
               key={route.name}
               className={`px-1 py-2 rounded-xl ${
                 pathname === route.route
-                  ? " bg-primary-mid text-secondary-very_light hover:bg-primary-mid"
+                  ? " bg-primary-dark text-secondary-very_light hover:bg-primary-light"
                   :  "bg-secondary-very_light text-primary-dark hover:bg-secondary-light "
               }`}>
               <div className="flex items-center justify-center">

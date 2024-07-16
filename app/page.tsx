@@ -9,13 +9,10 @@ export default function Home() {
   const dispatch = useAppDispatch();
   return (
     <div className="flex flex-col">
-      <div className="bg-primary-dark m-4 p-4 rounded-lg">
-      <AboutMe/>
-      </div>
-      <div className="bg-primary-dark m-4 p-4 rounded-lg">
+      <div className="bg-primary-dark p-4 rounded-lg">
       <HorizontalTimeline/>
       </div>
-      <div className=" bg-primary-dark m-4 p-4 rounded-lg">
+      <div className=" bg-primary-dark mt-2 p-4 rounded-lg">
         <div className="container flex flex-row items-center">
           <div className="flex-1">2</div>
           <div className="flex-1">2</div>

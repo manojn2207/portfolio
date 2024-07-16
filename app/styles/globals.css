@@ -12,7 +12,8 @@
     font-family: "Work Sans", sans-serif;
   }
   .full-screen{
-    height: 100vh !important;
+    /* height: auto; */
+    height: 100% !important;
   }
  
 .timeline {
