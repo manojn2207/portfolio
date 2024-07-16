@@ -14,3 +14,61 @@
   .full-screen{
     height: 100vh !important;
   }
+ 
+.timeline {
+  display: flex;
+  overflow-x: auto;
+  /* padding: 20px; */
+  position: relative;
+}
+
+.timelineEvent {
+  /* flex: 0 0 auto; */
+  /* margin-right: 20px; */
+  position: relative;
+  text-align: center;
+}
+
+.circle {
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+}
+
+.timelineContent {
+  border-radius: 4px;
+  padding: 10px;
+ width: 100%;
+  margin-top: 20px;
+}
+
+/* .timelineContent h3 {
+  margin: 0 0 10px;
+} */
+
+.timelineContent p {
+  margin: 0;
+}
+
+.line {
+  height: 2px;
+  width: 100%;
+  position: absolute;
+  left: 50%;
+  top: 10px;
+  transform: translateX(-50%);
+}
+
+/* .timelineEvent:last-child .line {
+  display: none;
+} */
+
+@media (max-width: 600px) {
+  .timelineContent {
+    width: 150px;
+  }
+}
