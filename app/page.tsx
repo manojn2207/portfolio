@@ -8,17 +8,20 @@ export default function Home() {
   const count = useAppSelector((state) => state.data.value);
   const dispatch = useAppDispatch();
   return (
-    <div className="flex flex-col">
-      <div className="bg-primary-dark p-4 rounded-lg">
+    <div className="flex flex-col p-3">
+      <div className="text-black p-4">
+      <AboutMe/>
+      </div>
+      <div className="text-black pearl mt-2 p-4 rounded-lg">
       <HorizontalTimeline/>
       </div>
-      <div className=" bg-primary-dark mt-2 p-4 rounded-lg">
+      {/* <div className=" text-black pearl mt-2 p-4 rounded-lg">
         <div className="container flex flex-row items-center">
           <div className="flex-1">2</div>
           <div className="flex-1">2</div>
           <div className="flex-1">2</div>
-        </div>
-      </div>
+        </div>  
+      </div> */}
     
     </div>
   );

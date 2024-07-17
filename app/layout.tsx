@@ -19,27 +19,25 @@ export default function RootLayout({
       
       <html lang="en">
         <head>
+          <title>Manoj Nandakumar</title>
+          <meta name="description" content="Manoj Nandakumar's porfolio website"></meta>
+          <meta name="keywords" content="Manoj, Nandakumar, porfolio"></meta>
+          <meta name="author" content="Manoj Nandakumar"></meta>
         <link rel="preconnect" href="https://fonts.googleapis.com"></link>
         <link rel="preconnect" href="https://fonts.gstatic.com"></link>
-        <link href="https://fonts.googleapis.com/css2?family=Playwrite+PE:wght@100..400&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"></link></head>
+        <link href="https://fonts.googleapis.com/css2?family=Playwrite+PE:wght@100..400&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"></link>
+        </head>
         
-        <body className="full-screen">
-        <div className="bg-primary-dark text-slate-100 p-4">
-      <AboutMe/>
-      </div>
-          <div className="full-screen bg-primary-mid flex flex-row text-slate-100">
-         
-           <div className="">
-           <Navbar />
+        <body className="full-screen flex justify-center align-middle">
+          <div className="h-full width-1200 flex flex-col" >
+           <div>
+            <Navbar />
            </div>
-            <div className="flex pt-2 bg-primary-light justify-center align-middle w-screen">
-              <div className="rounded-xl ">
-                {children}
-              </div>
-            </div>
-         
-            
+           <div className="rounded-xl flex flex-col">
+            {children}
+           </div>
           </div>
+       
         </body>
       </html>
     </Provider>

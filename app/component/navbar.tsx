@@ -3,39 +3,58 @@ import Image from 'next/image'
 import { usePathname } from "next/navigation";
 import { routes } from "../routes";
 import '../styles/globals.css';
+import { faDownload } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 export default function Navbar() {
   const pathname = usePathname();
   return (
-    <nav className="bg-primary-mid pt-2 text-white w-28 px-1">
-      <div className="flex flex-col">
-       
-        <div className="flex flex-col space-y-5 mx-1">
+    <nav className="w-full py-3">
+      
+       <div className="flex flex-row gap-10">
+        <div className="flex-1"> 
+          <div className="text-5xl text-white">Manoj Nandakumar.</div>
+          </div>
+        <div className="flex-grow flex flex-row items-end justify-end gap-2">
           {routes.map((route) => (
+            
+            
             <Link
               href={route.route}
               key={route.name}
-              className={`px-1 py-2 rounded-xl ${
+              className={`flex h-max py-2 pr-2 pl-1 ${
                 pathname === route.route
-                  ? " bg-primary-dark text-secondary-very_light hover:bg-primary-light"
-                  :  "bg-secondary-very_light text-primary-dark hover:bg-secondary-light "
-              }`}>
-              <div className="flex items-center justify-center">
-              <Image 
-              height={24}
-              width={24}
-              className={`${pathname === route.route?"svgWhite":""}`}
-              src={route.img}
-            alt="H"
-          />
-          </div>
-              <div className="flex items-center justify-center font-bold text-sm">
-            {route.name}
-              </div>
+                  ? " bg-primary-dark text-white hover:bg-primary-light"
+                  : " text-white hover:bg-primary-very_light hover:text-white "
+              } `}>
+                 
+          
+            
+          {/* <div className="flex items-center justify-center font-bold text-sm h-full"> */}
+         {route.name}
+              {/* </div> */}
+          
+              
             </Link>
           ))}
-         
+         <Link
+              href="/ManojNandakumar_Resume_SDE.pdf" 
+              download="ManojNandakumar_Resume_SDE"
+              target="_blank"
+              key='Resume'
+              className={`flex h-max py-2 pr-2 pl-1 text-white hover:bg-primary-very_light hover:text-white "
+              } `}>
+                 
+          
+            
+          {/* <div className="flex items-center justify-center font-bold text-sm h-full"> */}
+          <FontAwesomeIcon className="pt-1 pr-1" icon={faDownload} size="1x" /> Resume
+              {/* </div> */}
+          
+              
+            </Link>
         </div>
-      </div>
+        </div>
+      
     </nav>
   );
 }

@@ -1,51 +1,83 @@
 import Link from "next/link"
-import {  ScriptProps } from "next/script"
+import Image from 'next/image';
+import { Timeline } from "../../public/details";
+import portfolio from "../../public/home/portfolio.png";
+import backdrop from "../../public/home/background.svg";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
+
+const SocialButtons = () => {
+  return (
+    <div className="social-buttons">
+         <a href="tel:+16314315073">
+        <FontAwesomeIcon icon={faPhone} size="2x" />
+      </a>
+      <a href="mailto:mnandakumar@protonmail.com" target="_top">
+        <FontAwesomeIcon icon={faEnvelope} size="2x" />
+      </a>
+      <a href="https://www.linkedin.com/in/manoj-nandakumar" target="_blank" rel="noopener noreferrer">
+        <FontAwesomeIcon icon={faLinkedin} size="2x" />
+      </a>
+      <a href="https://github.com/manojn2207" target="_blank" rel="noopener noreferrer">
+        <FontAwesomeIcon icon={faGithub} size="2x" />
+      </a>
+     
+      
+    </div>
+  );
+};
+
 
 export const AboutMe = ()=>{
-    return <div>
-         <div className="container flex items-center">
-          <span className="text-4xl font-semibold mr-10">
-            Manoj Nandakumar.
-          </span>
-          <Link href="/About-me">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="size-6"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="m12.75 15 3-3m0 0-3-3m3 3h-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
-              />
-            </svg>
-          </Link>
-        </div>
-        <div className="">
-          I'm Manoj Nandakumar, an MS CS graduate from SUNY at Stony Brook with
-          a year of software engineering experience. 
+    return <div className="my_portfolio flex items-center">
+        <div className="flex flex-row ">
+          
+          <div className="flex-1"
+          style={{
+            backgroundImage: `url(${backdrop.src})`,
+            backgroundRepeat:'no-repeat',
+            backgroundSize:'100% 130%'
+          }}>
+ 
+          
+          <Image 
+           
+      src={portfolio}
+      width={500}
+      height={500}
+      alt="Picture of the author"
+    />
+
+          </div>
+          <div className="text-white pl-2 flex-1 flex-grow flex-col flex items-end justify-center gap-2">
+            <div className="container  text-3xl">
+            I'm Manoj Nandakumar, Software Engineer with Masters in Computer Science from Stony Brook University and Pet Lover.
+            
+            </div>
+            <SocialButtons/>
+          </div>
+           
         </div>
     </div>
 }
-import { Timeline } from "../../public/details";
+
 export const HorizontalTimeline = () => {
   return (
     <div className="timeline flex">
       {Timeline.map((event, index) => (
         <div key={index} className="timelineEvent flex-grow">
-          <div className="circle bg-primary-light"></div>
-          <div className="timelineContent">
+          <div className="circle bg-white"></div>
+          <div className="timelineContent text-white">
             <h3>{event.date}</h3>
             <p>{event.description}</p>
           </div>
-          <div className="line bg-primary-light"></div>
+          <div className="line bg-white"></div>
         
         </div>
       ))}
     </div>
   );
 }
- 
+
+
